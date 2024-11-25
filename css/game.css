@@ -6,8 +6,8 @@
 }
 
 .field {
-    background: rgb(20,149,133);
-    background: linear-gradient(180deg, rgba(20,149,133,1) 0%, rgba(0,107,95,1) 100%);
+    background: rgb(20, 149, 133);
+    background: linear-gradient(180deg, rgba(20, 149, 133, 1) 0%, rgba(0, 107, 95, 1) 100%);
     width: 980px;
     height: 630px;
     display: grid;
@@ -19,7 +19,7 @@
     height: 605px;
 }
 
-.way img{
+.way img {
     position: absolute;
     top: 21px;
     left: 78px;
@@ -31,6 +31,7 @@
     left: 428px;
     z-index: 5;
 }
+
 .point {
     position: absolute;
     box-sizing: border-box;
@@ -39,38 +40,170 @@
     border-radius: 50%;
     background-color: red;
     border: 1px solid black;
-    box-shadow: 
+    box-shadow:
         1px 1px 2px 1px rgba(255, 255, 255, 0.3) inset,
         -1px -1px 2px 1px rgba(0, 0, 0, .6) inset,
-        1px 1px 2px 1px rgba(255, 255, 255, 0.3)
-    ;
+        1px 1px 2px 1px rgba(255, 255, 255, 0.3);
     transition: .9s ease;
 
 }
+
 .point:hover {
     transform: scaleY(1.1);
     transition: .9s ease;
 }
+
 .point--start {
     width: 21px;
-    height: 12px; 
+    height: 12px;
 }
+
 .point--regular {
-        background-color: #4b4b4a;
+    background-color: #4b4b4a;
 }
+
 .point--finish {
     background-color: #137488;
     width: 21px;
     height: 12px;
-    box-shadow: 
-    1px 1px 2px 1px rgba(255, 255, 255, 0.3) inset,
-    -1px -1px 2px 1px rgba(0, 0, 0, .6) inset,
-    1px 1px 2px 1px rgba(255, 255, 255, 0.3),
-    1px 1px 5px 1px rgba(255, 255, 255, 1)
-
+    box-shadow:
+        1px 1px 2px 1px rgba(255, 255, 255, 0.3) inset,
+        -1px -1px 2px 1px rgba(0, 0, 0, .6) inset,
+        1px 1px 2px 1px rgba(255, 255, 255, 0.3),
+        1px 1px 5px 1px rgba(255, 255, 255, 1)
 }
+
 .point--checkpoint {
     outline: 3px solid red;
     outline-offset: 3px;
 }
 
+
+/* CONTROLS */
+
+.controls {
+    position: absolute;
+    bottom: 18px;
+    left: 4px;
+
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+/* friends block */
+
+.friends {
+    width: 535px;
+    height: 58px;
+ 
+    background: linear-gradient(180deg, #72cfdb 30%, #107689 100%);
+    border-radius: 16px;
+    
+    box-shadow: 0px -2px 0px 4px rgba(16, 118, 137, .5) inset,
+                0px 0px 0px 2px #107689 inset,
+                0px 0px 0px 4px #6ceef5 inset,
+                0px 0px 0px 6px #107689 inset;
+    
+    display: flex;
+    justify-content: space-between;
+    padding: 4px;
+}
+
+.slider {
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-position: center;
+    border: none;
+    margin: 8px;
+}
+
+.slider--prev {
+    background-image: url('../img/arrow-prev.png');
+}
+.friends__list {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+.friends__item {
+    width: 50px;
+    height: 50px;
+    background-image: url('../img/icon.png');
+    border-radius: 6px;
+}
+
+.slider--next {
+    background-image: url('../img/arrow-next.png');
+}
+
+ /* CHAT */
+.chat {
+    width: 68px;
+    height: 62px;
+
+    background-image: url('../img/chat.png');
+
+    transition: all .5s ease;
+}
+.chat:hover {
+    background-image: url('../img/chat--hover.png');
+    transition: all .5s ease;
+}
+
+/* UNIVER BUTTON */
+
+.univer {
+    width: 204px;
+    height: 66px;
+    
+    position: relative;
+    display: grid;
+    place-items: center;
+}
+
+.univer__image {
+    position: absolute;
+    top:0;
+    left: 0;
+}
+.univer__text { 
+    z-index: 2;
+    color: white;
+}
+
+/* EMAIL & STATS */
+
+.icon {
+    width: 66px;
+    height: 61px;
+    border: none;
+    background-color: transparent;
+    padding: 0;
+    border-radius: 12px;
+}
+
+
+
+
+
+
+
+
+
+
+.hovered {
+    transition: .5s ease;
+
+}
+.hovered:hover {
+    filter: contrast(140%);
+
+}
