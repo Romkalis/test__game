@@ -1,0 +1,76 @@
+.body {
+    display: grid;
+    width: 100vw;
+    height: 100vh;
+    place-items: center;
+}
+
+.field {
+    background: rgb(20,149,133);
+    background: linear-gradient(180deg, rgba(20,149,133,1) 0%, rgba(0,107,95,1) 100%);
+    width: 980px;
+    height: 630px;
+    display: grid;
+    position: relative;
+}
+
+.furniture {
+    width: 100%;
+    height: 605px;
+}
+
+.way img{
+    position: absolute;
+    top: 21px;
+    left: 78px;
+}
+
+.hero {
+    position: absolute;
+    bottom: 117px;
+    left: 428px;
+    z-index: 5;
+}
+.point {
+    position: absolute;
+    box-sizing: border-box;
+    width: 16px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: red;
+    border: 1px solid black;
+    box-shadow: 
+        1px 1px 2px 1px rgba(255, 255, 255, 0.3) inset,
+        -1px -1px 2px 1px rgba(0, 0, 0, .6) inset,
+        1px 1px 2px 1px rgba(255, 255, 255, 0.3)
+    ;
+    transition: .9s ease;
+
+}
+.point:hover {
+    transform: scaleY(1.1);
+    transition: .9s ease;
+}
+.point--start {
+    width: 21px;
+    height: 12px; 
+}
+.point--regular {
+        background-color: #4b4b4a;
+}
+.point--finish {
+    background-color: #137488;
+    width: 21px;
+    height: 12px;
+    box-shadow: 
+    1px 1px 2px 1px rgba(255, 255, 255, 0.3) inset,
+    -1px -1px 2px 1px rgba(0, 0, 0, .6) inset,
+    1px 1px 2px 1px rgba(255, 255, 255, 0.3),
+    1px 1px 5px 1px rgba(255, 255, 255, 1)
+
+}
+.point--checkpoint {
+    outline: 3px solid red;
+    outline-offset: 3px;
+}
+
