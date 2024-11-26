@@ -27,9 +27,8 @@
 
 .hero {
     position: absolute;
-    bottom: 117px;
-    left: 428px;
     z-index: 5;
+    transition: all 1s ease-in-out;
 }
 
 .point {
