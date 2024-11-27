@@ -20,34 +20,10 @@
 
         <section class="controls">
             <div class="friends">
-                <button class="slider slider--prev"></button>
+                <button class="slider slider--prev hovered"></button>
                 <ul class="friends__list">
-                    <li class="friends__item">
-                        
-                    </li>
-                    <li class="friends__item">
-
-                    </li>
-                    <li class="friends__item">
-
-                    </li>
-                    <li class="friends__item">
-
-                    </li>
-                    <li class="friends__item">
-
-                    </li>
-                    <li class="friends__item">
-
-                    </li>
-                    <li class="friends__item">
-
-                    </li>
-                    <li class="friends__item">
-
-                    </li>
                 </ul>
-                <button class="slider slider--next"></button>
+                <button class="slider slider--next hovered"></button>
             </div>
             <div class="chat"></div>
             <div class="univer hovered" id="univer">
@@ -57,15 +33,47 @@
             <a class="icon mail hovered">
                 <img src="./img/mail.png" alt="кнопка почты">
             </a>
-            <button class="icon stats hovered">
+            <button class="icon stats hovered" id="stats">
                 <img src="./img/stats.png" alt="кнопка почты">
             </button>
         </section>
+
+        <dialog class="modal">
+            <article class="statistic">
+            
+                <div class="rating__heading">
+                    <span class="rating__text">Рейтинг игроков</span>
+                </div>
+
+                <div class="tabs">
+                    <span class="tab tabs__week">
+                        Недельный
+                    </span>
+                    <span class="tab tabs__general active">
+                        Общий
+                    </span>
+                </div>
+
+                <div class="stats__table">
+                    <div class="rating__title rating__grid">
+                        <span class="rating__number">Место</span>
+                        <span class="empty__cell"></span>
+                        <span class="rating__name">Имя Фамилия</span>
+                        <span class="rating__points">Опыт</span>
+                    </div>
+                    <ul class="rating__list"></ul>
+                </div>
+
+            </article>
+            
+            <button class="close__modal hovered" id="closeModal"></button>
+
+        </dialog>
     </main>
 
 
 
-    <script src="./index.js"></script>
+    <script src="./index.js" type="module"></script>
 
 </body>
 
