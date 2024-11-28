@@ -391,6 +391,8 @@ function closeModal() {
     modal.close()
     closeModalButton.removeEventListener('click', closeModal)
 }
+
+
 // обработка массива победителей
 function getWinners() {
   const winners__list = document.querySelector(".rating__list");
@@ -441,45 +443,62 @@ function changeTab (evt) {
   }
 }
 
-tabs.addEventListener("click",  changeTab);
-modalButton.addEventListener("click", showModal);
 
 
 // слайдер игроков
 
-const friends = document.querySelector('.friends')
-const friendsList = friends.querySelector('.friends__list')
-const friendsData = [...data.friends]
+const friends = document.querySelector('.friends');
+const friendsList = friends.querySelector('.friends__list');
+const friendsData = [...data.friends];
+const nextFriendButton = friends.querySelector('.slider--next');
+const prevFriendButton = friends.querySelector('.slider--prev');
 
-const nextFriendButton = friends.querySelector('.slider--next')
-const prevFriendButton = friends.querySelector('.slider-prev')
+let currentIndex = 0;
 
-function renderFriends () {
-    
-    while(friendsData.length < 8) {
-        friendsData.push({})
+function renderFriends() {
+    friendsList.innerHTML = '';
+
+    while (friendsData.length < 9) {
+        friendsData.push({});
     }
 
-    friendsData.forEach( friend => {
+    let visibleFriends = friendsData.slice(currentIndex, currentIndex + 9);
 
+    if (visibleFriends.length < 8) {
+        const remainingFriends = friendsData.slice(0, 8 - visibleFriends.length);
+        visibleFriends.push(...remainingFriends);
+    }
+
+    visibleFriends.forEach(friend => {
         if (friend.id) {
-            
             friendsList.insertAdjacentHTML('beforeend', `
                 <li class="friends__item" title="${friend.name} ${friend.lastName}">
-                    <img src="${friend.img}" />
+                    <img src="${friend.img}" alt="${friend.name}">
                 </li>
-                `)
-
+            `);
         } else {
-            
-            friendsList.insertAdjacentHTML('beforeend', `<li class="friends__item"></li>`)
-
+            friendsList.insertAdjacentHTML('beforeend', `<li class="friends__item"></li>`);
         }
-    })
+    });
 }
-function nextFriend () {
-
+function updateSlidePosition() {
+    const offset = -currentIndex * 60; // 50px ширина картинки + 10px gap
+    friendsList.style.transform = `translateX(${offset}px)`;
+}
+function showPrevSlide() {
+    currentIndex = (currentIndex - 1 + friendsData.length) % friendsData.length;
+    updateSlidePosition();
 }
 
+function showNextSlide() {
+    currentIndex = (currentIndex + 1) % friendsData.length;
+    updateSlidePosition();
+}
 
-renderFriends()
+nextFriendButton.addEventListener('click', showNextSlide);
+prevFriendButton.addEventListener('click', showPrevSlide);
+tabs.addEventListener("click",  changeTab);
+modalButton.addEventListener("click", showModal);
+
+
+renderFriends();
